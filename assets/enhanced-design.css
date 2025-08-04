@@ -1,0 +1,364 @@
+/* HELLERMIND AI - BLACK & BLUE GRADIENT DESIGN */
+
+/* Import Professional Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* CRITICAL: Global Overrides with Maximum Specificity */
+html body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e40af 75%, #1d4ed8 100%) !important;
+  background-attachment: fixed !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  color: #ffffff !important;
+}
+
+/* Target the EXACT React structure */
+html body div#root div[class*="flex"][class*="flex-col"][class*="h-screen"] {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(29, 78, 216, 0.7) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 24px !important;
+  margin: 20px !important;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+  overflow: hidden !important;
+  color: #ffffff !important;
+}
+
+/* Target Title with EXACT class pattern */
+html body div#root h1[class*="text-4xl"],
+html body div#root div[class*="text-4xl"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 25%, #2563eb 50%, #1d4ed8 75%, #1e40af 100%) !important;
+  background-size: 300% 300% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: blueGradient 8s ease-in-out infinite !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.025em !important;
+  text-shadow: none !important;
+}
+
+@keyframes blueGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Target Subtitle */
+html body div#root h2[class*="font-semibold"],
+html body div#root div[class*="font-semibold"] {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1.25rem !important;
+  color: rgba(148, 163, 184, 0.9) !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Target ALL Buttons */
+html body div#root button {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  color: #ffffff !important;
+}
+
+/* Target Blue Buttons Specifically */
+html body div#root button[class*="bg-blue"] {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 25%, #3b82f6 50%, #1d4ed8 75%, #1e3a8a 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+  padding: 0.875rem 2rem !important;
+  min-height: 48px !important;
+}
+
+html body div#root button[class*="bg-blue"]:hover:not(:disabled) {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(29, 78, 216, 0.6), 0 0 0 1px rgba(96, 165, 250, 0.5) !important;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 25%, #60a5fa 50%, #2563eb 75%, #1e40af 100%) !important;
+}
+
+html body div#root button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Target Message Containers */
+html body div#root div[class*="bg-gray-200"] {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+  color: #ffffff !important;
+}
+
+html body div#root div[class*="bg-blue-500"] {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #1d4ed8 100%) !important;
+  border-radius: 16px !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(96, 165, 250, 0.3) !important;
+}
+
+/* Target Input Container */
+html body div#root div[class*="border"][class*="border-gray-300"] {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 2px solid rgba(59, 130, 246, 0.4) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  color: #ffffff !important;
+}
+
+html body div#root div[class*="border"][class*="border-gray-300"]:focus-within {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 4px 20px rgba(29, 78, 216, 0.4) !important;
+  transform: translateY(-1px) !important;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.7) 100%) !important;
+}
+
+/* Target Textarea */
+html body div#root textarea {
+  background: transparent !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border: none !important;
+  outline: none !important;
+  resize: none !important;
+  color: #ffffff !important;
+}
+
+html body div#root textarea::placeholder {
+  color: rgba(148, 163, 184, 0.8) !important;
+  font-weight: 400 !important;
+}
+
+/* Target Example Prompts */
+html body div#root div[class*="cursor-pointer"][class*="max-w-"] {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  margin: 0.5rem !important;
+  padding: 1rem !important;
+  color: #ffffff !important;
+}
+
+html body div#root div[class*="cursor-pointer"][class*="max-w-"]:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.5) !important;
+  border-color: #3b82f6 !important;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(29, 78, 216, 0.3) 100%) !important;
+}
+
+/* Target Progress Bars */
+html body div#root div[class*="bg-blue-400"][style*="width"] {
+  background: linear-gradient(90deg, #1e40af 0%, #2563eb 25%, #3b82f6 50%, #60a5fa 75%, #93c5fd 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+html body div#root div[class*="bg-blue-400"][style*="width"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Target Loading Dots */
+html body div#root span[class*="animate-pulse"] {
+  background: linear-gradient(90deg, #2563eb, #3b82f6) !important;
+  border-radius: 50% !important;
+}
+
+/* Target Scrollbars */
+html body div#root *::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+html body div#root *::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5) !important;
+  border-radius: 4px !important;
+}
+
+html body div#root *::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  border-radius: 4px !important;
+}
+
+html body div#root *::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
+}
+
+/* Target Chat Container */
+html body div#root div[class*="overflow-y-auto"] {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: #ffffff !important;
+}
+
+/* Target Message Groups */
+html body div#root div[class*="flex"][class*="items-start"][class*="space-x-4"] {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
+  color: #ffffff !important;
+}
+
+html body div#root div[class*="flex"][class*="items-start"][class*="space-x-4"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(29, 78, 216, 0.3) 100%) !important;
+}
+
+/* Target Error Messages */
+html body div#root div[class*="text-red-500"] {
+  background: linear-gradient(135deg, rgba(153, 27, 27, 0.8) 0%, rgba(185, 28, 28, 0.6) 100%) !important;
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  color: #ffffff !important;
+}
+
+/* Target All Text Elements */
+html body div#root *,
+html body div#root p,
+html body div#root span,
+html body div#root div {
+  color: #ffffff !important;
+}
+
+/* Specific text color overrides */
+html body div#root div[class*="text-gray-"],
+html body div#root span[class*="text-gray-"],
+html body div#root p[class*="text-gray-"] {
+  color: rgba(203, 213, 225, 0.9) !important;
+}
+
+/* Links styling */
+html body div#root a {
+  color: #60a5fa !important;
+  text-decoration: underline !important;
+}
+
+html body div#root a:hover {
+  color: #93c5fd !important;
+}
+
+/* Status text */
+html body div#root span[class*="font-medium"] {
+  color: #60a5fa !important;
+  font-weight: 700 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  html body div#root div[class*="flex"][class*="flex-col"][class*="h-screen"] {
+    margin: 10px !important;
+    border-radius: 16px !important;
+  }
+
+  html body div#root h1[class*="text-4xl"],
+  html body div#root div[class*="text-4xl"] {
+    font-size: 2rem !important;
+  }
+}
+
+/* Force Everything - Last Resort */
+html body div#root * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Make sure text is crisp */
+html body div#root *,
+html body div#root *::before,
+html body div#root *::after {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Dark theme specific overrides */
+html body div#root div[class*="dark:"] {
+  color: #ffffff !important;
+}
+
+/* Additional text contrast fixes */
+html body div#root .markdown,
+html body div#root [class*="markdown"] {
+  color: #ffffff !important;
+}
+
+html body div#root .markdown h1,
+html body div#root .markdown h2,
+html body div#root .markdown h3,
+html body div#root .markdown h4,
+html body div#root .markdown h5,
+html body div#root .markdown h6 {
+  color: #60a5fa !important;
+}
+
+html body div#root .markdown code {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #93c5fd !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+}
+
+html body div#root .markdown pre {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+}
+
+/* WebGPU not supported message */
+html body div[class*="fixed"][class*="bg-black"] {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e40af 100%) !important;
+  color: #ffffff !important;
+}
