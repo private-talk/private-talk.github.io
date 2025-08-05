@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/gif" href="/assets/logo%20gif.gif" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HellerMind - AI</title>
 
@@ -12,6 +12,12 @@
     <!-- Enhanced Design Files -->
     <link rel="stylesheet" crossorigin href="/assets/enhanced-design.css">
 
+    <!-- Edit/Run Extension Styles -->
+    <link rel="stylesheet" crossorigin href="/assets/edit-run-styles.css">
+
+    <!-- Pyodide for Python execution -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+
     <!-- Main React Application -->
     <script type="module" crossorigin src="/assets/index-Btti6dN2.js"></script>
   </head>
@@ -19,8 +25,59 @@
   <body>
     <div id="root"></div>
 
+    <!-- Initialize Pyodide -->
+    <script>
+      let pyodide;
+      async function initPyodide() {
+        try {
+          console.log('🐍 Loading Pyodide...');
+          // Try loading from CDN first
+          if (typeof loadPyodide === 'undefined') {
+            console.log('loadPyodide not found, trying alternative CDN...');
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js';
+            script.onload = async () => {
+              try {
+                pyodide = await loadPyodide();
+                console.log('✅ Pyodide loaded successfully from alternative CDN');
+                window.pyodide = pyodide;
+              } catch (error) {
+                console.error('❌ Failed to load Pyodide from alternative CDN:', error);
+              }
+            };
+            script.onerror = () => {
+              console.error('❌ Failed to load Pyodide script');
+            };
+            document.head.appendChild(script);
+          } else {
+            pyodide = await loadPyodide();
+            console.log('✅ Pyodide loaded successfully');
+            window.pyodide = pyodide;
+          }
+        } catch (error) {
+          console.error('❌ Failed to load Pyodide:', error);
+          // Try one more time with a different approach
+          setTimeout(async () => {
+            try {
+              if (typeof loadPyodide !== 'undefined') {
+                pyodide = await loadPyodide();
+                console.log('✅ Pyodide loaded successfully on retry');
+                window.pyodide = pyodide;
+              }
+            } catch (retryError) {
+              console.error('❌ Final retry failed:', retryError);
+            }
+          }, 2000);
+        }
+      }
+      initPyodide();
+    </script>
+
     <!-- Load enhancement scripts after React loads -->
     <script defer src="/assets/auto-load.js"></script>
     <script defer src="/assets/code-copy.js"></script>
+    <script defer src="/assets/python-runner.js"></script>
+    <script defer src="/assets/edit-run-extension.js"></script>
+    <script defer src="/assets/python-output-fix.js"></script>
   </body>
 </html>

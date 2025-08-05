@@ -1,0 +1,221 @@
+/* Edit/Run Button Extension Styles */
+
+/* Make Edit/Run button inherit all styling from copy button */
+.edit-run-btn {
+    /* Remove any conflicting styles and let it inherit from the copied classes */
+    margin-left: 4px; /* Small gap between copy and edit/run button */
+}
+
+/* Ensure the play icon is properly centered */
+.edit-run-btn svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* Modal Styles */
+.edit-run-modal {
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+}
+
+.edit-run-modal .bg-white {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .edit-run-modal .bg-white {
+        background-color: #1f2937;
+        color: #f9fafb;
+    }
+}
+
+/* Code Editor Styles */
+.code-editor {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    line-height: 1.5;
+    tab-size: 2;
+    resize: none;
+    outline: none;
+}
+
+.code-editor:focus {
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Output Area Styles */
+.output-area {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Button States */
+.run-code:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.copy-code.copied {
+    background-color: #10b981;
+}
+
+.copy-code.copied:hover {
+    background-color: #059669;
+}
+
+/* Language Select Styles */
+.language-select {
+    outline: none;
+}
+
+.language-select:focus {
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edit-run-modal > div {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+        width: calc(100vw - 2rem);
+    }
+
+    .edit-run-modal .flex.gap-4 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .edit-run-modal .flex.gap-4 > div {
+        flex: none;
+        min-height: 200px;
+    }
+}
+
+/* Scrollbar Styles for Output Area */
+.output-area::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.output-area::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.output-area::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.output-area::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+@media (prefers-color-scheme: dark) {
+    .output-area::-webkit-scrollbar-track {
+        background: #374151;
+    }
+
+    .output-area::-webkit-scrollbar-thumb {
+        background: #6b7280;
+    }
+
+    .output-area::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+    }
+}
+
+/* Success/Error Message Styles */
+.text-green-600 {
+    color: #16a34a;
+}
+
+.text-red-600 {
+    color: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark\:text-green-400 {
+        color: #4ade80;
+    }
+
+    .dark\:text-red-400 {
+        color: #f87171;
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.output-area.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Code Block Enhancement */
+pre:hover .edit-run-btn,
+code:hover .edit-run-btn {
+    opacity: 1;
+}
+
+.edit-run-btn {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+/* Tooltip-like behavior for buttons */
+.edit-run-btn:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 4px;
+}
+
+/* Focus indicators for accessibility */
+.edit-run-btn:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.close-modal:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Modal transition */
+.edit-run-modal {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.edit-run-modal[style*="display: none"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.edit-run-modal[style*="display: flex"] {
+    opacity: 1;
+}
